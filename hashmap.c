@@ -16,8 +16,6 @@ struct HashMap {
     long current; //indice del ultimo dato accedido
 };
 
-void colision(HashMap *, long*, Pair *);
-
 Pair * createPair( char * key,  void * value) {
     Pair * new = (Pair *)malloc(sizeof(Pair));
     new->key = key;
@@ -103,22 +101,15 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-
-    return NULL;
+    long i = 0;
+    while(i < map->capacity){
+       if(map->buckets[i] != NULL) break;
+       i++;
+    }
+    return map->buckets[i];
 }
 
 Pair * nextMap(HashMap * map) {
 
     return NULL;
-}
-
-void colision(HashMap *map, long *i, Pair *new){
-    while (map->buckets[*i] != NULL){
-        *i = (*i + 1) % map->capacity;
-        if(*i == map->capacity - 1) *i = 0;
-        if(map->buckets[*i] != NULL){
-            map->buckets[*i] = new;
-            break;
-        }
-    }
 }
