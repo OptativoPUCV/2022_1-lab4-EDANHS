@@ -106,6 +106,7 @@ Pair * firstMap(HashMap * map) {
        if(map->buckets[i] != NULL) break;
        i++;
     }
+    map->current = i;
     return map->buckets[i];
 }
 
