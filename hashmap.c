@@ -92,8 +92,7 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * searchMap(HashMap * map,  char * key) {   
     long i = 0;
-    while (is_equal(map->buckets[i]->key,key) != 1){
-        
+    while (is_equal(map->buckets[i]->key,key) == 0){
         i++;
     }
 
