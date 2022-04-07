@@ -40,26 +40,30 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
+/*void redimensionar(HashMap *map){
+    Pair **new = (Pair**)calloc(map->capacity*2, sizeof(Pair*));
+
+    map->capacity *= 2;
+}*/
 
 void insertMap(HashMap * map, char * key, void * value) {
-    Pair *new = createPair(key,value);
     long i = hash(key,map->capacity);
     
-    if((map->size/map->capacity) >= 0.75){
-        map->capacity *= 2;
-        map->buckets = (Pair **) realloc(map->buckets,(map->capacity*sizeof(Pair)));
-        if(map->buckets == NULL) exit(1);
-    }
-    
+    //if((map->size/map->capacity) >= 0.75) redimensionar
 
-    if(map->buckets[i] != NULL && map->buckets[i]->key != NULL){
-        colision(map,&i,new);
+    while (map->buckets[i] != NULL && map->buckets[i]->key != NULL){
+        if(is_equal(key,map->buckets[i]->key) == 1) return;
+        i = (i+1) % map->capacity;
+    }
+    if(map->buckets[i] != NULL){
+        map->buckets[i]->key = key;
+        map->buckets[i]->value = value;
     }
     else{
-        map->buckets[i] = new;
+        createPair(key,value);
     }
-    map->current = i;
     map->size++;
+    map->current = i;
 }
 
 void enlarge(HashMap * map) {
