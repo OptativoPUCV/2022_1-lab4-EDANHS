@@ -61,9 +61,9 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     else{
         createPair(key,value);
+        map->size++;
+        map->current = i;
     }
-    map->size++;
-    map->current = i;
 }
 
 void enlarge(HashMap * map) {
