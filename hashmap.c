@@ -56,12 +56,14 @@ void insertMap(HashMap * map, char * key, void * value) {
             if(map->buckets[i] != NULL){
                 map->buckets[i] = new;
             }
+            if(i == map->capacity - 1) i=0;
         }
     }
     else{
         map->buckets[i] = new;
     }
     map->current = i;
+    map->size++;
 }
 
 void enlarge(HashMap * map) {
