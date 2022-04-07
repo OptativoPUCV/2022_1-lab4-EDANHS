@@ -97,7 +97,7 @@ Pair * searchMap(HashMap * map,  char * key) {
         i++;
     }
 
-    return map->buckets[i];
+    return map->buckets[i-1];
 }
 
 Pair * firstMap(HashMap * map) {
