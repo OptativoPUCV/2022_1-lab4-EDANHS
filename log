@@ -142,3 +142,17 @@ hashmap.c:61:18: error: assignment makes integer from pointer without a cast [-W
 cc1.exe: all warnings being treated as errors
 Compilation failed
 a281d01
+Thu Apr  7 11:46:35 HSP 2022: 
+ hashmap.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'insertMap':
+hashmap.c:56:22: error: passing argument 2 of 'colision' makes integer from pointer without a cast [-Werror=int-conversion]
+         colision(map,&i,new);
+                      ^
+hashmap.c:19:6: note: expected 'long int' but argument is of type 'long int *'
+ void colision(HashMap *, long, Pair *);
+      ^~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+abf48fd
