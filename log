@@ -128,3 +128,17 @@ hashmap.c:107:14: error: comparison between pointer and integer [-Werror]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 bdededf
+Thu Apr  7 11:45:26 HSP 2022: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'insertMap':
+hashmap.c:46:15: error: initialization makes pointer from integer without a cast [-Werror=int-conversion]
+     long *i = hash(key,map->capacity);
+               ^~~~
+hashmap.c:61:18: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+     map->current = i;
+                  ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+a281d01

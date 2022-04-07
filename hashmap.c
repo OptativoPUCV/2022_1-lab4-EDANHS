@@ -102,9 +102,9 @@ Pair * nextMap(HashMap * map) {
 }
 
 void colision(HashMap *map, long *i, Pair *new){
-    while (map->buckets[i] != NULL){
-        i = (*i + 1) % map->capacity;
-        if(i == map->capacity - 1) i = 0;
+    while (map->buckets[*i] != NULL){
+        *i = (*i + 1) % map->capacity;
+        if(*i == map->capacity - 1) *i = 0;
         if(map->buckets[*i] != NULL){
             map->buckets[*i] = new;
             break;
