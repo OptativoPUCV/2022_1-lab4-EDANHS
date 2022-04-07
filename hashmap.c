@@ -42,8 +42,7 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) {
     Pair *new = createPair(key,value);
     long i = hash(key,map->capacity);
-    map->buckets[i] = new;
-    map->current = i;
+    
     if((map->size/map->capacity) >= 0.7){
         map->capacity += 20;
         map->buckets = (Pair **) realloc(map->buckets,(map->capacity*sizeof(Pair)));
