@@ -49,7 +49,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         if(map->buckets == NULL) exit(1);
     }
 
-    if(map->buckets[i] != NULL){
+    if(map->buckets[i] != NULL && map->buckets[i]->key != NULL && map->buckets[i]->value != NULL){
         while (map->buckets[i] != NULL){
             i++;
             if(map->buckets[i] != NULL){
