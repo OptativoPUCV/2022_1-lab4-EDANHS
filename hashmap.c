@@ -43,11 +43,12 @@ void insertMap(HashMap * map, char * key, void * value) {
     Pair *new = createPair(key,value);
     long i = hash(key,map->capacity);
     
-    if((map->size/map->capacity) >= 0.7){
-        map->capacity += 20;
+    if((map->size/map->capacity) >= 0.75){
+        map->capacity *= 2;
         map->buckets = (Pair **) realloc(map->buckets,(map->capacity*sizeof(Pair)));
         if(map->buckets == NULL) exit(1);
     }
+    
 
     if(map->buckets[i] != NULL && map->buckets[i]->key != NULL && map->buckets[i]->value != NULL){
         while (map->buckets[i] != NULL){
