@@ -91,9 +91,13 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
+    long i = 0;
+    while (is_equal(map->buckets[i]->key,key) != 1){
+        i++;
+        if(i == map->capacity - 1) i = 0;
+    }
 
-
-    return NULL;
+    return map->buckets[i];
 }
 
 Pair * firstMap(HashMap * map) {
