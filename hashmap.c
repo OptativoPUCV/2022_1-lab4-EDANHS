@@ -16,6 +16,8 @@ struct HashMap {
     long current; //indice del ultimo dato accedido
 };
 
+void colision(HashMap *, long *, Pair *);
+
 Pair * createPair( char * key,  void * value) {
     Pair * new = (Pair *)malloc(sizeof(Pair));
     new->key = key;
@@ -41,7 +43,7 @@ int is_equal(void* key1, void* key2){
 
 void insertMap(HashMap * map, char * key, void * value) {
     Pair *new = createPair(key,value);
-    long i = hash(key,map->capacity);
+    long *i = hash(key,map->capacity);
     
     if((map->size/map->capacity) >= 0.75){
         map->capacity *= 2;
@@ -50,18 +52,11 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     
 
-    if(map->buckets[i] != NULL && map->buckets[i]->key != NULL){
-        while (map->buckets[i] != NULL){
-            i = (i + 1) % map->capacity;
-            if(i == map->capacity - 1) i = 0;
-            if(map->buckets[i] != NULL){
-                map->buckets[i] = new;
-                break;
-            }
-        }
+    if(map->buckets[*i] != NULL && map->buckets[*i]->key != NULL){
+        colision(map,i,new);
     }
     else{
-        map->buckets[i] = new;
+        map->buckets[*i] = new;
     }
     map->current = i;
     map->size++;
@@ -104,4 +99,15 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
 
     return NULL;
+}
+
+void colision(HashMap *map, long *i, Pair *new){
+    while (map->buckets[i] != NULL){
+        i = (*i + 1) % map->capacity;
+        if(i == map->capacity - 1) i = 0;
+        if(map->buckets[*i] != NULL){
+            map->buckets[*i] = new;
+            break;
+        }
+    }
 }
