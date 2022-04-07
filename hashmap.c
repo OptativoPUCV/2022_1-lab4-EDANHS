@@ -56,7 +56,7 @@ void insertMap(HashMap * map, char * key, void * value) {
                 map->buckets[i] = new;
                 break;
             }
-            if(i == map->capacity-1) i=0;
+            if(i >= map->capacity-1) i=0;
             i++;
         }
     }
