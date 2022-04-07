@@ -40,16 +40,19 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
-/*void redimensionar(HashMap *map){
+void redimensionar(HashMap *map){
+    long k;
     Pair **new = (Pair**)calloc(map->capacity*2, sizeof(Pair*));
-
+    for (k = 0 ; k < map->capacity ; k++){
+        new[k] = map->buckets[k];
+    }
     map->capacity *= 2;
-}*/
+}
 
 void insertMap(HashMap * map, char * key, void * value) {
     long i = hash(key,map->capacity);
     
-    //if((map->size/map->capacity) >= 0.75) redimensionar
+    if((map->size/map->capacity) >= 0.75) redimensionar(map);
 
     while (map->buckets[i] != NULL && map->buckets[i]->key != NULL){
         if(is_equal(key,map->buckets[i]->key) == 1) return;
