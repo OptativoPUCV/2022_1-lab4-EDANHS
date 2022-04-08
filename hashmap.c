@@ -112,9 +112,6 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     if(map->buckets ==  NULL) return NULL;
-    if(map->current == map->capacity - 1) map->current = 0;
-    if (map->buckets[map->current]->key != NULL && map->buckets[map->current] != NULL) return map->buckets[map->current];
-    map->current++;
-    while(map->buckets[map->current]->value == NULL) map->current++;
+    if(map->buckets[map->current+1]->key != NULL) return map->buckets[map->current+1];
     return map->buckets[map->current];
 }
