@@ -360,3 +360,9 @@ Fri Apr  8 18:14:57 HSP 2022:
  1 file changed, 1 insertion(+)
  tests:  0|0
 9dbccf2
+Fri Apr  8 18:15:20 HSP 2022: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+ tests:  13|2
+total_score: 50/70
+7f4bc78
