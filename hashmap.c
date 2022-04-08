@@ -111,7 +111,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    long i = map->current + 1;
+    long i = map->current;
     while (map->buckets[i] == NULL && map->buckets[i]->key == NULL){
        i++;
     } 
