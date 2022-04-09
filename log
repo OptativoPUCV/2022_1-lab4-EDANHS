@@ -510,3 +510,17 @@ Sat Apr  9 09:26:42 HSP 2022:
  1 file changed, 1 insertion(+), 2 deletions(-)
  tests:  0|0
 08fd7da
+Sat Apr  9 09:29:08 HSP 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:76:18: error: format '%i' expects argument of type 'int', but argument 2 has type 'char *' [-Werror=format=]
+         printf("%i %s",aux[k]->key,aux[k]->value);
+                  ^
+hashmap.c:76:21: error: format '%s' expects argument of type 'char *', but argument 3 has type 'void *' [-Werror=format=]
+         printf("%i %s",aux[k]->key,aux[k]->value);
+                     ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+7739445

@@ -73,6 +73,7 @@ void enlarge(HashMap * map) {
     map->size = 0;
 
     for(long k = 0; k < map->capacity/2 ; k++){
+        printf("%i %s",aux[k]->key,aux[k]->value);
         insertMap(map,aux[k]->key,aux[k]->value); 
     }
 }
