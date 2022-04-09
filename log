@@ -495,3 +495,8 @@ hashmap.c:70:18: error: initialization from incompatible pointer type [-Werror=i
 cc1.exe: all warnings being treated as errors
 Compilation failed
 3f2f5bb
+Sat Apr  9 09:20:15 HSP 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+b49c7a7
