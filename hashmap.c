@@ -50,7 +50,7 @@ void redimensionar(HashMap *map){
 void insertMap(HashMap * map, char * key, void * value) {
     long i = hash(key,map->capacity);
     
-    if((map->size/map->capacity) >= 0.75) redimensionar(map);
+    //if((map->size/map->capacity) >= 0.75) redimensionar(map);
 
     while (map->buckets[i] != NULL && map->buckets[i]->key != NULL){
         if(is_equal(key,map->buckets[i]->key) == 1) return;
