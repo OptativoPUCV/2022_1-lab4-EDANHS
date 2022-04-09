@@ -535,3 +535,8 @@ hashmap.c:76:21: error: format '%s' expects argument of type 'char *', but argum
 cc1.exe: all warnings being treated as errors
 Compilation failed
 f4c7070
+Sat Apr  9 09:31:32 HSP 2022: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  0|0
+edf2c58
