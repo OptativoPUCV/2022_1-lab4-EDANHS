@@ -484,3 +484,14 @@ Sat Apr  9 09:13:33 HSP 2022:
  1 file changed, 1 deletion(-)
  tests:  0|0
 1c9c414
+Sat Apr  9 09:20:04 HSP 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:70:18: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+     Pair **aux = *map->buckets;
+                  ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+3f2f5bb
