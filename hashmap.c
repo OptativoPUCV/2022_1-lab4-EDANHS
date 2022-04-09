@@ -112,11 +112,12 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     if(map->buckets == NULL) return NULL;
-    long i = map->current +1;
+    long i = map->current + 1;
     while(i < map->capacity){
        if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) break;
        i++;
     }
+    if(i == map->capacity - 1) return NULL;
     map->current = i;
     return map->buckets[i];
 }
