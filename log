@@ -524,3 +524,14 @@ hashmap.c:76:21: error: format '%s' expects argument of type 'char *', but argum
 cc1.exe: all warnings being treated as errors
 Compilation failed
 7739445
+Sat Apr  9 09:29:55 HSP 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:76:21: error: format '%s' expects argument of type 'char *', but argument 3 has type 'void *' [-Werror=format=]
+         printf("%s %s",aux[k]->key,aux[k]->value);
+                     ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+f4c7070
