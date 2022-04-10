@@ -583,3 +583,8 @@ hashmap.c:71:10: error: variable 'aux' set but not used [-Werror=unused-but-set-
 cc1.exe: all warnings being treated as errors
 Compilation failed
 161a25b
+Sun Apr 10 15:35:55 HSP 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+ecefb52
