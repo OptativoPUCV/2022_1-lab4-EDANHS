@@ -556,3 +556,13 @@ hashmap.c:71:18: error: initialization from incompatible pointer type [-Werror=i
 cc1.exe: all warnings being treated as errors
 Compilation failed
 6c8fe26
+Sun Apr 10 15:34:03 HSP 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:71:18: error: incompatible types when initializing type 'Pair ** {aka struct Pair **}' using type 'Pair {aka struct Pair}'
+     Pair **aux = **map->buckets;
+                  ^
+Compilation failed
+31aece8
