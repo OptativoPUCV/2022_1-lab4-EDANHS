@@ -68,15 +68,13 @@ void insertMap(HashMap * map, char * key, void * value) {
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     map->capacity *= 2;
-    Pair **aux = map->buckets;
-    Pair **basura = NULL;
-    map->buckets = basura;
-    map->buckets = (Pair**) calloc(map->capacity,sizeof(Pair*));
-    map->size = 0;
+    HashMap *aux = createMap(map->capacity*2);
 
-    for(long k = 0; k < (map->capacity/2); k++){
-        insertMap(map,aux[k]->key,aux[k]->value); 
+    for(long k = 0; k < map->capacity; k++){
+        insertMap(aux,map->buckets[k]->key,map->buckets[k]->value); 
     }
+    free(map);
+    map = aux;
 }
 
 
