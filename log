@@ -566,3 +566,20 @@ hashmap.c:71:18: error: incompatible types when initializing type 'Pair ** {aka 
                   ^
 Compilation failed
 31aece8
+Sun Apr 10 15:35:31 HSP 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:76:26: error: subscripted value is neither array nor pointer nor vector
+         insertMap(map,aux[k].key,aux[k].value);
+                          ^
+hashmap.c:76:37: error: subscripted value is neither array nor pointer nor vector
+         insertMap(map,aux[k].key,aux[k].value);
+                                     ^
+hashmap.c:71:10: error: variable 'aux' set but not used [-Werror=unused-but-set-variable]
+     Pair aux = **map->buckets;
+          ^~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+161a25b
