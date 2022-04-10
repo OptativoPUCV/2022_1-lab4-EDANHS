@@ -660,3 +660,8 @@ hashmap.c:50:6: note: expected 'HashMap * {aka struct HashMap *}' but argument i
 cc1.exe: all warnings being treated as errors
 Compilation failed
 e620028
+Sun Apr 10 16:02:48 HSP 2022: 
+ hashmap.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+ tests:  0|0
+4de6271
