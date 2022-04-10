@@ -72,8 +72,6 @@ void enlarge(HashMap * map) {
     long auxCapacity = map->capacity;
 
     map->capacity *= 2;
-    
-    map->capacity *= 2;
     Pair **auxBucket2 = (Pair**) calloc(map->capacity,sizeof(Pair*));
     map->buckets = auxBucket2;
     map->size = 0;
