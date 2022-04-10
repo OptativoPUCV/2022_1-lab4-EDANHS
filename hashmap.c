@@ -69,7 +69,8 @@ void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     map->capacity *= 2;
     Pair **aux = map->buckets;
-    map->buckets = NULL;
+    Pair **basura = NULL;
+    map->buckets = basura;
     map->buckets = (Pair**) calloc(map->capacity,sizeof(Pair*));
     map->size = 0;
 
