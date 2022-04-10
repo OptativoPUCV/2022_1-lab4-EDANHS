@@ -643,3 +643,20 @@ Sun Apr 10 15:47:09 HSP 2022:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 e67d831
+Sun Apr 10 16:01:15 HSP 2022: 
+ hashmap.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function 'enlarge':
+hashmap.c:76:17: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+     Pair *aux = (Pair**) calloc(map->capacity,sizeof(Pair*));
+                 ^
+hashmap.c:81:23: error: passing argument 1 of 'insertMap' from incompatible pointer type [-Werror=incompatible-pointer-types]
+             insertMap(aux,map->buckets[k]->key,map->buckets[k]->value);
+                       ^~~
+hashmap.c:50:6: note: expected 'HashMap * {aka struct HashMap *}' but argument is of type 'Pair * {aka struct Pair *}'
+ void insertMap(HashMap * map, char * key, void * value) {
+      ^~~~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+e620028
