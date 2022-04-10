@@ -638,3 +638,8 @@ hashmap.c:76:9: error: incompatible types when assigning to type 'HashMap * {aka
          ^
 Compilation failed
 8a8803a
+Sun Apr 10 15:47:09 HSP 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+e67d831
